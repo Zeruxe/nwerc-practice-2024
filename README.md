@@ -1,3 +1,6 @@
+NWERC 2024 Practice, JU Kod
+===========================
+
 There will be 4 different folders Yoseph,Calle,Adrian,Teacher/Rudy.
 Then 1 folder to keep track of what needs to be done and what has been done. 
 
