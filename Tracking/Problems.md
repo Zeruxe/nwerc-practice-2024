@@ -1,3 +1,0 @@
-Problems are on: https://jukod.github.io/problem-sets.html
-
-Kattis link: Contest is to be made...
