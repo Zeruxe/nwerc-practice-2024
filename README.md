@@ -2,11 +2,11 @@ NWERC 2024 Practice, JU Kod
 ===========================
 
 * [first week's contest][]
-* [second week's contest (TBA)]
+* [second week's contest][]
 * [third week's contest (TBA)]
 
 [first week's contest]: https://open.kattis.com/contests/fyssfe
-
+[second week's contest]:https://open.kattis.com/contests/bvzbie 
 There will be 4 different folders Yoseph,Calle,Adrian,Teacher/Rudy.
 Then 1 folder to keep track of what needs to be done and what has been done. 
 
