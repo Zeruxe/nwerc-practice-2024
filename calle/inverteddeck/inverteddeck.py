@@ -1,40 +1,37 @@
 n = int(input())
-nums = list(map(int, input().split()))
-is_sorted = True
-prevLargest = -1 
-for i in range(1, n):
-    prevLargest = max(prevLargest, nums[i])
-    if nums[i] < nums[i - 1]:
-        is_sorted = False
-        first_unsorted = nums.index(prevLargest)-1
-        break
 
-if is_sorted: 
+nums = list(map(int, input().split()))
+
+if nums == sorted(nums): 
     print("1 1")
     exit()
 
-l, r = 0, 1
+subs = []
 
-flipped = False
 start, end = -1, -1
-while r < n and l < r and r < len(nums)-1:
-    if nums[r] >= nums[l-1] and nums[l] <= nums[r+1] and nums[r+1] > nums[r]: 
-        start, end = l, r
-        flipped = True 
-    if nums[l] >= nums[r]: 
-        r += 1
-    else:
-        l, r = r, r + 1
-if not flipped: 
+for i in range(1, n): 
+    if nums[i] <= nums[i-1]: 
+        if start == -1: 
+            start = i-1 
+            end = i 
+        else: 
+            end += 1 
+    elif nums[i] > nums[i-1]: 
+        if nums[start] != nums[end]: 
+            subs.append((start, end))
+        start, end = -1, -1
+
+if nums[start] != nums[end]: 
+    subs.append((start, end))
+if len(subs) > 1: 
     print("impossible")
     exit()
+
+start, end = subs[0]
+
 nums[start:end+1] = nums[start:end+1][::-1]
-is_sorted = True
-for i in range(1, n):
-    prevLargest = max(prevLargest, nums[i])
-    if nums[i] < nums[i - 1]:
-        is_sorted = False
-if is_sorted: 
+
+if nums == sorted(nums): 
     print(start+1, end+1)
 else: 
     print("impossible")
